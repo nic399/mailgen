@@ -282,20 +282,6 @@ if (locals.action) {
                         <tr>
                           <td colspan="2">
                             <table class="data-table" width="100%" cellpadding="0" cellspacing="0">
-                              <tr>
-                                <% for (var column in tableItem.data[0]) {%>
-                                  <th
-                                    <% if(tableItem.columns && tableItem.columns.customWidth && tableItem.columns.customWidth[column]) { %>
-                                        width="<%= tableItem.columns.customWidth[column] %>"
-                                    <% } %>
-                                    <% if(tableItem.columns && tableItem.columns.customAlignment && tableItem.columns.customAlignment[column]) { %>
-                                        style="text-align:<%= tableItem.columns.customAlignment[column] %>"
-                                    <% } %>
-                                  >
-                                    <p><%- column.charAt(0).toUpperCase() + column.slice(1) %></p>
-                                  </th>
-                                <% } %>
-                              </tr>
                               <% for (var i in tableItem.data) {%>
                               <tr>
                                 <% for (var column in tableItem.data[i]) {%>
