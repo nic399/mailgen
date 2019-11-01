@@ -299,8 +299,8 @@ if (locals.action) {
                               <tr>
                                 <% for (var column in tableItem.data[i]) {%>
                                   <td
-                                      <% if(tableItem.columns && tableItem.columns.customAlignment && tableItem.columns.customAlignment[column]) { %>
-                                          style="text-align:<%= tableItem.columns.customAlignment[column] %>"
+                                      <% if (tableItem.columns && ((tableItem.columns.customAlignment && tableItem.columns.customAlignment[column]) || (tableItem.columns.customPadding && tableItem.columns.customPadding[column]))) { %>
+                                          style="<% if (tableItem.columns.customAlignment && tableItem.columns.customAlignment[column]) { %> text-align:<%= tableItem.columns.customAlignment[column] %>; <% } %> <% if (tableItem.columns.customPadding && tableItem.columns.customPadding[column]) { %> padding:<%= tableItem.columns.customPadding[column] %>; <% } %>" 
                                       <% } %>
                                   >
                                     <%- tableItem.data[i][column] %>
